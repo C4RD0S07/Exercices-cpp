@@ -548,10 +548,276 @@ void ex26() {
 
 void ex27() {
 
+	int valores, dentro = 0, fora = 0;
+
+	for (int i = 1; i <= 10; i++) {
+		cout << "Introduza um numero: ";
+		cin >> valores;
+
+		if (valores >= 10 && valores <= 20) {
+			dentro += 1;
+		}
+		else {
+			fora += 1;
+		}
+	}
+	cout << "Tem " << dentro << " numero(s) dentro do intervalo de 10 e 20." << endl;
+	cout << "Tem " << fora << " numero(s) fora do intervalo de 10 e 20.";
+}
+
+void ex271() {
+
+	int vetor[9], dentro = 0, fora = 0;
+
+	for (int i = 0; i <= 9; i++) {
+		cout << "Introduza um numero para a posicao " << i << ": ";
+		cin >> vetor[i];
+
+		if (vetor[i] >= 10 && vetor[i] <= 20) {
+			dentro += 1;
+		}
+		else {
+			fora += 1;
+		}
+	}
+	cout << "Tem " << dentro << " numero(s) dentro do intervalo de 10 e 20." << endl;
+	cout << "Tem " << fora << " numero(s) fora do intervalo de 10 e 20.";
+}
+
+void ex28() {
+
+	float altura, maior = 0, menor = 400;
+
+	for (int i = 1; i <= 15; i++) {
+		cout << "Introduza a altura da " << i << " pessoa: ";
+		cin >> altura;
+
+		if (altura > maior) {
+			maior = altura;
+		}
+		if (altura < menor) {
+			menor = altura;
+		}
+	}
+	cout << "Menor altura: " << menor << endl;
+	cout << "Maior altura: " << maior;
+}
+
+void ex29() {
+
+	for (int i = 100; i <= 200; i++) {
+		if (i % 2 == 1) {
+			cout << i << endl;
+		}
+	}
+}
+
+void ex30() {
+
+	int pares = 0, impares = 0, valores;
+
+	for (int i = 1; i <= 10; i++) {
+		cout << "Introduza um numero: ";
+		cin >> valores;
+
+		if (valores % 2 == 0) {
+			pares += 1;
+		}
+		else {
+			impares += 1;
+		}
+	}
+	cout << "Tem " << pares << " numeros pares." << endl;
+	cout << "Tem " << impares << " numeros impares.";
+}
+
+void ex31() {
+
+	float racao, gramas, kg;
+
+	cout << "Introduza o peso do saco de racao: ";
+	cin >> racao;
+
+	cout << "Introduza a quantidade de comida em gramas que fornece para os gatos: ";
+	cin >> gramas;
+	kg = gramas / 1000;
+
+	cout << "Apos cinco dias restaram " << racao - kg * 5 << " quilos";
+}
+
+void ex32() {
+
+	int A, B, temp;
+	
+	cout << "Introduza um valor para A: ";
+	cin >> A;
+
+	cout << "Introduza um valor para B: ";
+	cin >> B;
+
+	temp = A;
+	A = B;
+	B = temp;
+
+	cout << "Depois da troca de A o valor e: " << A << endl;
+	cout << "Depois da troca de B o valor e: " << B;
+}
+
+void ex33() {
+
+	float comprimento, largura, altura;
+
+	cout << "Introduza o comprimento: ";
+	cin >> comprimento;
+
+	cout << "Introdua a largura: ";
+	cin >> largura;
+
+	cout << "Introduza a altura: ";
+	cin >> altura;
+
+	cout << "O volume do retangulo e " << comprimento * largura * altura << " metros cubicos.";
+}
+
+void ex34() {
+
+	int escolha, c1 = 0, c2 = 0, c3 = 0, c4 = 0, nulo = 0, branco = 0;
+	do {
+		cout << "1 - Votar no primeiro canditado;" << endl;
+		cout << "2 - Votar no segundo canditado;" << endl;
+		cout << "3 - Votar no terceiro canditado;" << endl;
+		cout << "4 - Votar no quarto canditado;" << endl;
+		cout << "5 - Voto nulo;" << endl;
+		cout << "6 - Voto em branco;" << endl;
+		cout << "0 - Conjunto de votos;" << endl;
+		cout << "Introduza um numero: ";
+
+		cin >> escolha;
+
+		if (escolha == 1) {
+			c1 += 1;
+		}
+		else if (escolha == 2) {
+			c2 += 1;
+		}
+		else if (escolha == 3) {
+			c3 += 1;
+		}
+		else if (escolha == 4) {
+			c4 += 1;
+		}
+		else if (escolha == 5) {
+			nulo += 1;
+		}
+		else if (escolha == 6) {
+			branco += 1;
+		}
+	} while (escolha != 0);
+	
+	cout << "Total de votos para o primeiro candidato: " << c1 << endl;
+	cout << "Total de votos para o segundo candidato: " << c2 << endl;
+	cout << "Total de votos para o terceiro candidato: " << c3 << endl;
+	cout << "Total de votos para o quarto canditado: " << c4 << endl;
+	cout << "Total de votos nulos: " << nulo << endl;
+	cout << "Total de votos em branco: " << branco << endl;
+}
+
+void ex35() {
+
+	int qlivros, pontos = 0;
+
+	cout << "Quantidade de livros que este cliente comprou: ";
+	cin >> qlivros;
+
+	if (qlivros == 1) {
+		pontos += 5;
+	}
+	else if (qlivros == 2) {
+		pontos += 15;
+	}
+	else if (qlivros == 3) {
+		pontos += 30;
+	}
+	else if (qlivros >= 4) {
+		pontos += 60;
+	}
+	cout << "Este cliente tem " << pontos << " pontos.";
+}
+
+void ex36() {
+
+	int qjogos;
+
+	cout << "Introduza o numero de jogos comprados: ";
+	cin >> qjogos;
+
+	if (qjogos < 10) {
+		cout << "Valor da compra: 50 euros." << endl << "Valor do desconto: 0%. " << endl << "Valor total com desconto: 50 euros." << endl;
+	}
+	else if (qjogos >= 10 && qjogos <= 19) {
+		cout << "Valor da compra: 50 euros." << endl << "Valor do desconto: 20%." << endl << "Valor total com desconto: " << 50 - (50 * 0.2) << "  euros." << endl;
+	}
+	else if (qjogos >= 20 && qjogos <= 49) {
+		cout << "Valor da compra: 50 euros." << endl << "Valor do desconto: 30%." << endl << "Valor total com desconto: " << 50 - (50 * 0.3) << "  euros." << endl;
+	}
+	else if (qjogos >= 50 && qjogos <= 99) {
+		cout << "Valor da compra: 50 euros." << endl << "Valor do desconto: 40%." << endl << "Valor total com desconto: " << 50 - (50 * 0.4) << "  euros." << endl;
+	}
+	else if (qjogos >= 100) {
+		cout << "Valor da compra: 50 euros." << endl << "Valor do desconto: 50%." << endl << "Valor total com desconto: " << 50 - (50 * 0.5) << "  euros." << endl;
+	}
+}
+
+void ex37() {
+
+	float temperatura;
+
+	cout << "Introduza a temperatura: ";
+	cin >> temperatura;
+
+	if (temperatura <= 15) {
+		cout << "Muito frio.";
+	}
+	else if (temperatura >= 16 && temperatura <= 23) {
+		cout << "Frio";
+	}
+	else if (temperatura >= 24 && temperatura <= 26) {
+		cout << "Agradavel.";
+	}
+	else if (temperatura >= 27 && temperatura <= 30) {
+		cout << "Quente.";
+	}
+	else if (temperatura > 30) {
+		cout << "Muito quente";
+	} 
+}
+
+void ex38() {
+
+	for (int i = 25; i >= 0; i--) {
+		cout << i << endl;
+	}
+}
+
+void ex39() {
+
+	int valor, somatorio = 0;
+
+	cout << "Introduza um valor para retornar o somatorio: ";
+	cin >> valor;
+
+	for (int i = 1; i <= valor; i++) {
+		somatorio += i;
+	}
+	cout << somatorio;
+}
+
+void ex40() {
+
 
 }
 
 int main() {
-	ex27();
+	ex40();
 	return 0;
-} // for ex20; while ex21; do...while ex22;
+} // for ex20; while ex21; do...while ex22 ex25;
