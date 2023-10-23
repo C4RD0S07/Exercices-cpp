@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 void ex1() {
@@ -814,10 +815,380 @@ void ex39() {
 
 void ex40() {
 
+	int numeros, i1 = 0, i2 = 0, i3 = 0, i4 = 0;
+
+	do {
+		cout << "Introduza um numero: ";
+		cin >> numeros;
+
+		if (numeros > 0 && numeros <= 25) {
+			i1 += 1;
+		}
+		else if (numeros >= 26 && numeros <= 50) {
+			i2 += 1;
+		}
+		else if (numeros >= 51 && numeros <= 75) {
+			i3 += 1;
+		}
+		else if (numeros >= 76 && numeros <= 100) {
+			i4 += 1;
+		}
+	} while (numeros != 0);
+	
+	cout << "Tem " << i1 << " numeros introduzidos no intervalo de 0 a 25" << endl;
+	cout << "Tem " << i2 << " numeros introduzidos no intervalo de 26 a 50" << endl;
+	cout << "Tem " << i3 << " numeros introduzidos no intervalo de 51 a 75" << endl;
+	cout << "Tem " << i4 << " numeros introduzidos no intervalo de 76 a 100";
+}
+
+void ex41() {
+
+	int idade, midade = 0, soma = 0;
+	float media = 0;
+
+	cout << "Introduza a idade: " << endl << "Clique em 0 para parar de introduzir idades." << endl;
+
+	do {
+		cin >> idade;
+
+		if (idade >= 18) {
+			midade += 1;
+			soma += idade;
+		}
+	} while (idade != 0);
+
+	media = (float)soma / midade;
+
+	cout << "Pessoas com maiores de idade: " << midade << endl;
+	cout << "Media de idade das pessoas maiores de idade: " << media;
+}
+
+void ex42() {
+
+	int valor;
+
+	cout << "Introduza um valor: ";
+	cin >> valor;
+
+	if (valor > 10) {
+		cout << "O numero e maior que 10!";
+	}
+	else if (valor < 10) {
+		cout << "O numero e menor que 10!";
+	}
+	else if (valor == 10) {
+		cout << "O numero e 10!";
+	}
+}
+
+void ex43() {
+
+	int algoritmo, soma = 0;
+
+	cout << "Introduza 10 algoritmos: ";
+
+	for (int i = 1; i <= 10; i++) {
+		cin >> algoritmo;
+
+		if (algoritmo < 40) {
+			soma += algoritmo;
+		}
+	}
+	cout << "O resultado da soma dos algoritmos inferiores a 40 e: " << soma;
+}
+
+void ex44() {
+
+	//Ler 2 valores, calcular e escrever a soma dos inteiros existentes entre os 2 valores lidos (incluindo os valores lidos na soma). 
+	// Considere que o segundo valor lido será sempre maior que o primeiro valor lido.
+
+	int valor1, valor2, soma = 0;
+
+	do {
+		cout << "Introduza o primeiro valor: ";
+		cin >> valor1;
+
+		cout << "Introduza o segundo valor (maior que o primeiro): ";
+		cin >> valor2;
+
+		if (valor1 >= valor2) {
+			cout << "O segundo valor tem de ser maior do que o primeiro. Tente novamente." << endl;
+		}
+
+	} while (valor1 >= valor2);
+	
+	for (int i = valor1; i <= valor2; i++) {
+		soma += i;
+	}
+
+	cout << "A soma dos inteiros existente entre " << valor1 << " e " << valor2 << " e: " << soma;
+}
+
+void ex45() {
+
+	//O mesmo exercício anterior, mas agora, considere que o segundo valor lido poderá ser maior ou menor que o primeiro valor lido, ou seja, deve-se testá-los.
+
+	int valor1, valor2, soma = 0;
+
+	cout << "Introduza o primeiro valor: ";
+	cin >> valor1;
+
+	cout << "Introduza o segundo valor: ";
+	cin >> valor2;
+
+	if (valor1 < valor2) {
+		for (int i = valor1; i <= valor2; i++) {
+			soma += i;
+		}
+	}
+	else if (valor1 >= valor2) {
+		for (int i = valor2; i <= valor1; i++) {
+			soma += i;
+		}
+	}
+	cout << "A soma dos inteiros existente entre " << valor1 << " e " << valor2 << " e: " << soma;
+}
+
+void ex46() {
+
+	// Escreve um algoritmo que leia um número não determinado de valores e calcule a média dos valores lidos, a quantidade de valores positivos, 
+	// a quantidade de valores negativos e o percentual de valores negativos e positivos. Mostre os resultados.
+
+	float media = 0, soma = 0, valores, totalvalores = 0, negativos = 0, positivos = 0;
+
+	cout << "Introduza valores (0 para encerrar): " << endl;
+
+	do {
+		cin >> valores;
+
+		if (valores > 0) {
+			totalvalores += 1;
+			positivos += 1;
+			soma += valores;
+		}
+		else if (valores < 0) {
+			totalvalores += 1;
+			negativos += 1;
+			soma += valores;
+		}
+	} while (valores != 0);
+
+	cout << "Media dos valores introduzidos: " << soma / totalvalores << endl;
+	cout << "Quantidade de valores positivos: " << positivos << endl;
+	cout << "Quantidade de valores negativos: " << negativos << endl;
+	cout << "Percentual dos valores positivos: " << (positivos * 100) / totalvalores << "%" << endl;
+	cout << "Percentual dos valores negativos: " << (negativos * 100) / totalvalores << "%";
+}
+
+void ex47() {
+
+	int vetor[10], valor, posicao = -1;
+	bool encontrado = false;
+
+	for (int i = 0; i < 10; i++) {
+		cout << "Introduza um valor para a posicao " << i << ": ";
+		cin >> vetor[i];
+	}
+	cout << "Digite um valor para procurar no vetor: ";
+	cin >> valor;
+
+	for (int i = 0; i < 10; i++) {
+		if (vetor[i] == valor) {
+			encontrado = true;
+			posicao = i;
+			break;
+		}
+	}
+
+	if (encontrado == true) {
+		cout << "O valor " << valor << " foi encontrado na posicao " << posicao;
+	}
+	else {
+		cout << "O valor " << valor << " nao foi encontrado.";
+	}
+}
+
+void ex48() {
+
+	//Faz um programa que possua um vetor designado A que armazene 6 números inteiros. O programa deve executar os seguintes passos:
+	//Atribua os seguintes valores a e esse vetor: 1, 0, 5, -2, -5, 7.
+	//Armazene em uma variável inteira a soma entre os valores das posições A[0], A[1] e A[5] do vetor e mostre.
+	//Mostre cada valor do vetor A, um em cada linha.
+
+	int A[6] = {1, 0, 5, -2, -5, 7}, soma = 0;
+
+	soma = A[0] + A[1] + A[5];
+
+	cout << "O resultado da soma das posicoes 0, 1 e 5 e: " << soma << endl;
+	
+	cout << "Cada valor do vetor A:" << endl;
+	for (int i = 0; i < 6; i++) {
+		cout << A[i] << endl;
+	}
+}
+
+void ex49() {
+
+	//Faz um programa que leia de seis números inteiros, calcule e mostre:
+	//A quantidade de números pares
+	//Quais os números pares
+	//A Quantidade de números ímpares
+	//Quais os números ímpares
+
+	int valores, pares = 0, impares = 0;
+	int* vetorp = new int[pares];
+	int* vetori = new int[impares];
+
+	cout << "Introduza 6 valores inteiros: " << endl;
+
+	for (int i = 0; i < 6; i++) {
+		cin >> valores;
+
+		if (valores % 2 == 0) {
+			pares += 1;
+			vetorp[pares - 1] = valores;
+		}
+		else if (valores % 2 == 1) {
+			impares += 1;
+			vetori[impares - 1] = valores;
+		}
+	}
+	cout << "Quantidade de numeros pares: " << pares << endl;
+	cout << "Quantidade de numeros impares: " << impares << endl;
+	
+	cout << "Numeros pares introduzidos: " << endl;;
+	for (int i = 1; i < pares; i++) {
+		cout << "posicao " << i << " = " << vetorp[i] << endl;
+	}
+
+	cout << "Numero impares introduzidos: " << endl;
+	for (int i = 0; i < impares; i++) {
+		cout << "posicao " << i << " = " << vetori[i] << endl;
+	}
+}
+
+void ex50() {
+
+	//Faz um programa que leia um vetor com dez números inteiros, calcule e mostre a quantidade de números negativos e a soma dos números positivos desse vetor.
+
+	int vetor[10], negativos = 0, positivos = 0, soma = 0;
+
+	for (int i = 0; i < 10; i++) {
+		cout << "Introduza um valor para a posicao " << i << ": ";
+		cin >> vetor[i];
+
+		if (vetor[i] < 0) {
+			negativos += 1;
+		}
+		else {
+			positivos += 1;
+			soma += vetor[i];
+		}
+	}
+	cout << "Quantidade de numeros negativos: " << negativos << endl;
+	cout << "Soma dos valores positivos: " << soma;
+}
+
+void ex51() {
+
+	// Faz um programa que alimente um vetor, com um número de posições definidas pelo utilizador. Este vetor deverá armazenar um conjunto de nomes em diferentes posições. 
+	// Crie um mecanismo para alimentar elementos no vetor e pesquisar por um valor existente.
+	// ========== MENU ==========
+	// 1) Registrar nomes
+	// 2) Pesquisar um nome
+	// 3) Listar todos os nomes
+	// 4) Sair do programa
+	// Digite uma opcao:
+
+	bool encontrado = false;
+	int opcao, quantidade, posicao, opcao2;
+	string nprocurado, vetor[500];
+	//string* vetor = new string[quantidade * 10];
+
+	do {
+		cout << "========== MENU ==========" << endl;
+		cout << "1) Registrar nomes" << endl;
+		cout << "2) Pesquisar um nome" << endl;
+		cout << "3) Listar todos os nomes" << endl;
+		cout << "4) Sair do programa" << endl;
+		cout << "Digite uma opcao:" << endl;
+		
+		cin >> opcao;
+
+		if (opcao == 1) {
+			cout << "Quantos nomes gostaria de registrar?" << endl;
+			cin >> quantidade;
+
+			for (int i = 0; i < quantidade; i++) {
+				cout << "Registre um nome para a posicao " << i << ": " << endl;
+				cin >> vetor[i];
+			}
+		}
+		else if (opcao == 2) {
+			cout << "Escreva o nome que deseja pesquisar: ";
+			cin >> nprocurado;
+
+			for (int i = 0; i < quantidade; i++) {
+				if (vetor[i] == nprocurado) {
+					encontrado = true;
+					posicao = i;
+					break;
+				}
+			}
+			do {
+				if (encontrado == true) {
+					cout << "O nome " << nprocurado << " foi encontrado na posicao " << posicao << endl;
+					cout << "0) Voltar ao menu." << endl;
+				}
+				else {
+					cout << "O nome " << nprocurado << " nao foi encontrado." << endl;
+					cout << "0) Voltar ao menu." << endl;
+				}
+				cin >> opcao2;
+			} while (opcao2 != 0);
+			
+		}
+		else if (opcao == 3) {
+			do {
+				cout << "Todos os nomes registrados: " << endl;
+				for (int i = 0; i < quantidade; i++) {
+					cout << vetor[i] << endl;
+				}
+				cout << "0) Voltar ao menu." << endl;
+				cin >> opcao2;
+			} while (opcao2 != 0);
+		}
+		else if (opcao != 4) {
+			cout << "Esta opcao nao existe. Tente novamente." << endl;
+		}
+	} while (opcao != 4);
+}
+
+void ex52() {
+
+	//Faz um programa que receba o nome de cinco produtos e os seus respetivos preços, armazene os em dois vetores separados, um para os produtos e o outro para os preços. 
+	// O programa deve calcular e mostrar:
+	//A quantidade de produtos com preço inferior a 50.00 euros;
+	//O nome dos produtos com preço entre os 50.00 e 100.00 euros;
+	//A média dos preços dos produtos com preço superior a 100.00 euros.
+}
+
+void ex53() {
+
+	//Faz um programa que receba o total das vendas de cada vendedor e guarde em um vetor. Receba também a percentagem da comissão de cada vendedor e armazene em outro vetor. 
+	// Receba os nomes desses vendedores e armazene em um terceiro vetor. Existem apenas dez vendedores. Calcule e mostre:
+	//Um relatório com os nomes dos vendedores e os valores a receber;
+	//O total das vendas de todos os vendedores;
+	//O maior valor a receber e quem o receberá;
+	//O menor valor a receber e quem o receberá;
 
 }
 
+void ex54() {
+
+	//Escreve um algoritmo que leia dois vetores de 10 posições e faça a multiplicação dos elementos do mesmo índice, colocando o resultado em um terceiro vetor. Mostre o vetor resultante.
+}
 int main() {
-	ex40();
+	ex52();
 	return 0;
-} // for ex20; while ex21; do...while ex22 ex25;
+} // for ex20; while ex21; do...while ex22 ex25; bool ex47;
