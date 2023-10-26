@@ -1,8 +1,11 @@
 #include <iostream>
 #include <string>
+#include <array>
 using namespace std;
 
 void ex1() {
+
+	//Escreve um algoritmo que calcule e mostra o dobro de número.
 
 	float numero, resultado;
 
@@ -16,6 +19,8 @@ void ex1() {
 }
 
 void ex2() {
+
+	//Escreve um algoritmo que calcule e mostre quanto o trabalhador deverá receber no fim do mês de acordo com a quantidade de horas trabalhadas e o valor que é pago por cada hora.
 
 	float qhoras, vpago, vfinal;
 
@@ -33,6 +38,8 @@ void ex2() {
 
 void ex3() {
 
+	//Escreve um algoritmo que calcule o IMC de uma pessoa (IMC é o peso divido pelo dobro da altura).
+
 	float IMC, peso, altura;
 
 	cout << "Introduza o peso: ";
@@ -48,6 +55,8 @@ void ex3() {
 }
 
 void ex4() {
+
+	//Escreve um algoritmo que calcule a idade de uma pessoa, sabendo o ano de nascimento.
 
 	int anascimento, ano, idade;
 
@@ -65,6 +74,8 @@ void ex4() {
 
 void ex5() {
 
+	//Escreve um algoritmo que calcule o valor do perímetro de retângulo. P = 2 \* (c + l).
+
 	float comprimento, largura, perimetro;
 
 	cout << "Introduza o comprimento do retangulo: ";
@@ -81,6 +92,8 @@ void ex5() {
 
 void ex6() {
 
+	//Escreve um algoritmo que calcule e mostre o valor da gorjeta a ser paga ao garçon (10% valor da conta).
+
 	float vconta, gorjeta;
 
 	cout << "Introduza o valor da conta: ";
@@ -93,6 +106,8 @@ void ex6() {
 }
 
 void ex7() {
+
+	//Escreve um algoritmo que calcule o troco a ser pago a um cliente, sabendo o preço total da compra e o valor dado para o pagamento.
 
 	float ptotal, vdado, troco;
 
@@ -110,6 +125,8 @@ void ex7() {
 
 void ex8() {
 
+	//Escreve um algoritmo que receba de entrada um número inteiro e mostre o seu sucessor.
+
 	int n, s;
 
 	cout << "Introduza um numero inteiro: ";
@@ -122,6 +139,8 @@ void ex8() {
 }
 
 void ex9() {
+
+	//Escreve um algoritmo que receba de entrada um número inteiro e mostre o seu antecessor.
 
 	int n, a;
 
@@ -136,6 +155,8 @@ void ex9() {
 
 void ex10() {
 
+	//Escreve um algoritmo que receba de entrada um número inteiro e a mostre a metade deste número.
+
 	int n;
 	float m;
 
@@ -149,6 +170,9 @@ void ex10() {
 }
 
 void ex11() {
+
+	//Escreve um algoritmo para calcular a média de um aluno a partir de duas notas. O programa deve mostra a média e também uma mensagem informando se o aluno foi aprovado ou reprovado. 
+	//Sabe-se que o aluno é reprovado se a sua média for inferior a 10.
 
 	float n1, n2, m;
 
@@ -173,6 +197,8 @@ void ex11() {
 
 void ex12() {
 
+	//Escreve um algoritmo que calcule o resto da divisão por 2 de um número inserido pelo utilizador.
+
 	int n, r;
 
 	cout << "Introduza um numero: ";
@@ -184,6 +210,8 @@ void ex12() {
 }
 
 void ex13() {
+
+	//Escreve um algoritmo que identifique se o número é par ou ímpar.
 
 	int n, r;
 
@@ -206,6 +234,8 @@ void ex13() {
 
 void ex14() {
 
+	//Escreve um algoritmo que identifique se o número é positivo ou negativo.
+
 	float numero;
 
 	cout << "Introduza um numero: ";
@@ -220,6 +250,13 @@ void ex14() {
 }
 
 void ex15() {
+
+	//Escreve um algoritmo que receba uma idade e classifique nas categorias:
+	//Infantil A (5 – 7 anos)
+	//Infantil B (8 -10 anos)
+	//Juvenil A (11 – 13 anos)
+	//Juvenil B (14 - 17 anos)
+	//Adulto(maior que 18 anos)
 
 	int idade;
 
@@ -248,6 +285,9 @@ void ex15() {
 
 void ex16() { //PERGUNTAR AO PROF SE PODE SE CONSIDERAR CORRETO
 
+	//Escreve um algoritmo que cálculo o reajuste do salário de um funcionário, sabendo que o funcionário deverá receber uma atualização de 15%
+	//se o seu salário seja menor ou igual a 525 €, caso contrário, será de 10%.
+
 	float salario, atualizacao;
 
 	cout << "Introduza o salario: ";
@@ -265,6 +305,11 @@ void ex16() { //PERGUNTAR AO PROF SE PODE SE CONSIDERAR CORRETO
 }
 
 void ex17() {
+
+	//Escreve um algoritmo que leia o plano de trabalho e o salário atual de um funcionário que calcule e imprima o seu novo salário. Use o comando switch.
+	//Plano A - Aumento de 10%
+	//Plano B - Aumento de 15%
+	//Plano C - Aumento de 20%
 
 	float salario, resultado;
 	char ptrabalho;
@@ -294,6 +339,8 @@ void ex17() {
 }
 
 void ex18() {
+
+	//Escreve um algoritmo que leia um número entre 0 e 10, e escreva este número por extenso. Use o comando switch.
 
 	int numero;
 
@@ -354,6 +401,16 @@ void ex18() {
 
 void ex19() {
 
+	//Escreve um algoritmo que leia o código do item pedido, a quantidade e calcule o valor a ser pago por aquele lanche. 
+	//Considere que a cada execução somente será calculada um item. Use o comando switch.
+	//ESPECIFICACAO   | CODIGO | PRECO
+	//Cachorro quente |  100   | 1.20
+	//Bauru simples   |  101   | 1.30
+	//Bauru com ovo   |  102   | 1.50
+	//Hamburguer      |  103   | 1.20
+	//Cheeseburguer   |  104   | 1.30
+	//Refrigerante    |  105   | 1.00
+
 	int codigo, quantidade;
 
 	cout << "Coloque o codigo: ";
@@ -402,6 +459,8 @@ void ex19() {
  
 void ex20() {
 
+	//Faz um algoritmo que receba um número inicial e um número final e depois mostre todos os números que compõe o intervalo deles. (for).
+
 	int nfinal, ninicial, intervalo;
 
 	cout << "Introduza o numero inicial: ";
@@ -424,6 +483,8 @@ void ex20() {
 
 void ex21() {
 
+	//Faz um algoritmo que receba um número e moste a sequência entre o número inserido até 100 (while).
+
 	int numero;
 
 	cout << "Introduza um numero menor que 100: ";
@@ -442,6 +503,8 @@ void ex21() {
 
 void ex22() {
 
+	//Faz um algoritmo que receba uma senha e mostre “Correta!” se o valor corresponder a “12345”. Caso contrário, peça a senha novamente. (do ... while).
+
 	int senha;
 
 	do { // faca isso enqt a senhor for diferente de 12345.
@@ -458,6 +521,8 @@ void ex22() {
 
 void ex23() {
 
+	//Faz um algoritmo que receba um número inteiro, calcule e imprime a tabuada desse número utilizando uma estrutura de repetição.
+
 	int numero, multiplicador = 0, resultado = 0;
 
 	cout << "Introduza um numero inteiro: ";
@@ -472,6 +537,8 @@ void ex23() {
 
 void ex231() {
 
+	//Faz um algoritmo que receba um número inteiro, calcule e imprime a tabuada desse número utilizando uma estrutura de repetição.
+
 	int numero;
 
 	cout << "Introduza um numero para resolver a tabuada: ";
@@ -483,6 +550,8 @@ void ex231() {
 }
 
 void ex24() {
+
+	//Faz um algoritmo que receba um valor maior que 10. Escrever todos os números pares entre 1 e o valor recebido.
 
 	int algoritmo;
 
@@ -504,6 +573,11 @@ void ex24() {
 }
 
 void ex25() {
+
+	//Faz um algoritmo que receba números inteiros entre 0 e 100 pelo teclado. A condição de parar deve ser 0 (zero). No final mostre:
+	//Maior número
+	//Menor número
+	//Média dos números
 
 	int numero, nmaior = 0, nmenor = 100, contador = 0, soma = 0;
 	float media;
@@ -539,6 +613,8 @@ void ex25() {
 
 void ex26() {
 
+	//Faz um algoritmo que gere números de 1000 a 1999 e escreva aqueles que dividindo por 11 dão resto igual a 5.
+
 	for (int i = 1000; i <= 1999; i++) {
 		
 		if (i % 11 == 5) {
@@ -548,6 +624,8 @@ void ex26() {
 }
 
 void ex27() {
+
+	//Escreve um algoritmo que recebe 10 valores, um de cada vez, e que conte quantos deles estão no intervalo [10,20] e quantos estão fora do intervalo.
 
 	int valores, dentro = 0, fora = 0;
 
@@ -568,6 +646,8 @@ void ex27() {
 
 void ex271() {
 
+	//Escreve um algoritmo que recebe um vetor de 10 numeros, um de cada vez, e que conte quantos deles estão no intervalo [10,20] e quantos estão fora do intervalo.
+
 	int vetor[9], dentro = 0, fora = 0;
 
 	for (int i = 0; i <= 9; i++) {
@@ -586,6 +666,10 @@ void ex271() {
 }
 
 void ex28() {
+
+	//Escreve um algoritmo que leia a altura de 15 pessoas e mostre:
+	//A menor altura do grupo;
+	//A maior altura do grupo.
 
 	float altura, maior = 0, menor = 400;
 
@@ -606,6 +690,8 @@ void ex28() {
 
 void ex29() {
 
+	//Escreve um algoritmo que escreva os números ímpares entre 100 e 200.
+
 	for (int i = 100; i <= 200; i++) {
 		if (i % 2 == 1) {
 			cout << i << endl;
@@ -614,6 +700,10 @@ void ex29() {
 }
 
 void ex30() {
+
+	//Escreva um algoritmo que recebe 10 valores, um de cada vez, e mostre:
+	//Quantos são pares;
+	//Quantos são ímparess.
 
 	int pares = 0, impares = 0, valores;
 
@@ -634,6 +724,10 @@ void ex30() {
 
 void ex31() {
 
+	//Pedro comprou um saco de ração com peso em quilos. Ele possui dois gatos, para os quais fornece a quantidade de ração em gramas. 
+	//A quantidade diária de ração fornecida para cada gato é sempre a mesma. 
+	//Faça um programa que receba o peso do saco de ração e a quantidade de ração fornecida para cada gato, calcule e mostre quanto restará de ração no saco após cinco dias.
+
 	float racao, gramas, kg;
 
 	cout << "Introduza o peso do saco de racao: ";
@@ -647,6 +741,9 @@ void ex31() {
 }
 
 void ex32() {
+
+	//Ler dois valores para as variáveis A e B e efetuar a troca dos valores de forma que a variável A passe a possuir o valor da variável B 
+	//e a variável B passe a possuir o valor da variável A. Apresentar os valores após a efetivação do processamento da troca.
 
 	int A, B, temp;
 	
@@ -666,6 +763,8 @@ void ex32() {
 
 void ex33() {
 
+	// Elaborar um programa que calcule e apresente o valor do volume de uma caixa retangular, utilizando a fórmula VOLUME <- COMPRIMENTO x LARGURA x ALTURA.
+
 	float comprimento, largura, altura;
 
 	cout << "Introduza o comprimento: ";
@@ -681,6 +780,16 @@ void ex33() {
 }
 
 void ex34() {
+	
+	//Em uma eleição presidencial existem quatro candidatos. Os votos são informados através de códigos. Os dados utilizados para a contagem dos votos obedecem à seguinte codificação:
+	//1,2,3,4 = voto para os respectivos candidatos;
+	//5 = voto nulo;
+	//6 = voto em branco;
+	//Elabore um algoritmo que leia o código do candidado em um voto. Calcule e escreva:
+	//total de votos para cada candidato;
+	//total de votos nulos;
+	//total de votos em branco;
+	//Como finalizador do conjunto de votos, tem-se o valor 0.
 
 	int escolha, c1 = 0, c2 = 0, c3 = 0, c4 = 0, nulo = 0, branco = 0;
 	do {
@@ -725,6 +834,14 @@ void ex34() {
 
 void ex35() {
 
+	//O programa de fidelidade de uma determinada livraria premia seus clientes de acordo com o número de livros comprados a cada mês. Os pontos são atribuídos da seguinte forma:
+	//Se um cliente comprar 0 livros, ele ganhará 0 pontos.
+	//Se um cliente comprar um livro, ele ganhará 5 pontos.
+	//Se um cliente comprar dois livros, ele ganhará 15 pontos.
+	//Se um cliente comprar 3 livros, ele ganhará 30 pontos.
+	//Se um cliente comprar 4 ou mais livros, ele ganhará 60 pontos.
+	//Crie um algoritmo que leia o número de livros comprado por um cliente e exiba o número de pontos correspondentes.
+
 	int qlivros, pontos = 0;
 
 	cout << "Quantidade de livros que este cliente comprou: ";
@@ -746,6 +863,14 @@ void ex35() {
 }
 
 void ex36() {
+
+	//Uma loja de jogos vende cada jogo por 50 euros, mas oferece descontos conforme a quantidade comprada, conforme a tabela a seguir:
+	//QUANTIDADE DE JOGOS COMPRADOS | DESCONTO
+	//            10-19             |   20%
+	//            20-49             |   30%
+	//           50 a 99            |   40%
+	//       100 ou mais            |   50%
+	//Crie um algoritmo que leia o número de jogos comprados e mostre o valor da compra, o valor do desconto (se houver) e o valor total com o desconto.
 
 	int qjogos;
 
@@ -771,6 +896,14 @@ void ex36() {
 
 void ex37() {
 
+	//Faz um algoritmo para ler a temperatura atual e conforme leitura, imprima o resultado de acordo com a tabela abaixo.
+	//TEMPERATURA | RESULTADO
+	//ate 15	  | muito frio
+	//de 16 a 23  | frio
+	//de 23 a 26  | agradavel
+	//de 26 a 30  | quente
+	//acima de 31 | muito quente
+
 	float temperatura;
 
 	cout << "Introduza a temperatura: ";
@@ -795,12 +928,17 @@ void ex37() {
 
 void ex38() {
 
+	//Escreve um programa que conte em ordem inversa, de 25 a zero.
+
 	for (int i = 25; i >= 0; i--) {
 		cout << i << endl;
 	}
 }
 
 void ex39() {
+
+	//Crie um programa para que retorne o somatório de todos os números entre 1 e um valor fornecido pelo utilizador. 
+	//Por exemplo, se o utilizador fornecer o número 4, o computador deverá calcular o somatório 1 + 2 + 3 + 4 = 10.
 
 	int valor, somatorio = 0;
 
@@ -814,6 +952,8 @@ void ex39() {
 }
 
 void ex40() {
+
+	//Escreve um algoritmo que leia uma quantidade de números e conte quantos deles estão nos seguintes intervalos: [0-25], [26-50], [51-75] e [76-100].
 
 	int numeros, i1 = 0, i2 = 0, i3 = 0, i4 = 0;
 
@@ -843,6 +983,9 @@ void ex40() {
 
 void ex41() {
 
+	//Faz um algoritmo que permita ao utilizador inserir a idade de quantas pessoas ele desejar. 
+	//Após isso o algoritmo deve informar a soma das pessoas maiores de idade e a média de idade das pessoas maiores de idade.
+
 	int idade, midade = 0, soma = 0;
 	float media = 0;
 
@@ -865,6 +1008,8 @@ void ex41() {
 
 void ex42() {
 
+	//Ler um valor e escrever a mensagem O número é maior que 10! se o valor lido for maior que 10, caso contrário escrever O número é menor que 10!
+
 	int valor;
 
 	cout << "Introduza um valor: ";
@@ -882,6 +1027,8 @@ void ex42() {
 }
 
 void ex43() {
+
+	//Escreve um algoritmo para ler 10 números. Todos os números lidos com valor inferior a 40 devem ser somados. Escreve o valor final da soma efetuada.
 
 	int algoritmo, soma = 0;
 
@@ -981,6 +1128,9 @@ void ex46() {
 }
 
 void ex47() {
+
+	//Escreve um algoritmo que leia um vetor com 10 posições de números inteiros e verifique se um determinado valor, 
+	//também inserido pelo utilizador se está no vetor. Caso o elemento não esteja no vetor, apresente uma mensagem informar que não está.
 
 	int vetor[10], valor, posicao = -1;
 	bool encontrado = false;
@@ -1167,10 +1317,48 @@ void ex51() {
 void ex52() {
 
 	//Faz um programa que receba o nome de cinco produtos e os seus respetivos preços, armazene os em dois vetores separados, um para os produtos e o outro para os preços. 
-	// O programa deve calcular e mostrar:
+	//O programa deve calcular e mostrar:
 	//A quantidade de produtos com preço inferior a 50.00 euros;
 	//O nome dos produtos com preço entre os 50.00 e 100.00 euros;
 	//A média dos preços dos produtos com preço superior a 100.00 euros.
+
+	string produtos[5];
+	float precos[5];
+	int p50 = 0, p50a100 = 0;
+	string* nome = new string[p50a100];
+
+	for (int i = 0; i < 5; i++) {
+		cout << "Introduza um produto para a posicao " << i << ": ";
+		cin >> produtos[i];
+
+		cout << "Introduza o preco do produto introduzido: ";
+		cin >> precos[i];
+
+		if (precos[i] < 50) {
+			p50 += 1;
+		}
+		else if (precos[i] >= 50 && precos[i] <= 100) {
+			p50a100 += 1;
+			nome[p50a100] = produtos[i];
+		}
+	}
+
+	cout << "PRODUTOS:" << endl;
+	for (int i = 0; i < 5; i++) {
+		cout << produtos[i] << endl;
+	}
+
+	cout << "PRECOS:" << endl;
+	for (int i = 0; i < 5; i++) {
+		cout << precos[i] << endl;
+	}
+
+	cout << "PRODUTOS ENTRE 50 A 100:" << endl;
+	for (int i = 0; i < p50a100; i++) {
+		cout << nome[i] << endl;
+	}
+
+	cout << "Quantidade de produtos com preco inferior a 50 euros: " << p50 << endl;
 }
 
 void ex53() {
