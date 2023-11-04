@@ -1324,8 +1324,7 @@ void ex52() {
 
 	string produtos[5];
 	float precos[5];
-	int p50 = 0, p50a100 = 0;
-	string* nome = new string[p50a100];
+	int p50 = 0, p100 = 0, soma = 0;
 
 	for (int i = 0; i < 5; i++) {
 		cout << "Introduza um produto para a posicao " << i << ": ";
@@ -1337,46 +1336,243 @@ void ex52() {
 		if (precos[i] < 50) {
 			p50 += 1;
 		}
-		else if (precos[i] >= 50 && precos[i] <= 100) {
-			p50a100 += 1;
-			nome[p50a100] = produtos[i];
+		else if (precos[i] > 100) {
+			soma += precos[i];
+			p100 += 1;
 		}
 	}
-
-	cout << "PRODUTOS:" << endl;
+	cout << "Quantidade de produtos com preco inferior a 50.00 euros: " << p50 << endl;
+	cout << "Produtos com preco entre 50.00 e 100.00 euros:" << endl;
 	for (int i = 0; i < 5; i++) {
-		cout << produtos[i] << endl;
+		if (precos[i] >= 50 && precos[i] <= 100) {
+			cout << produtos[i] << endl;
+		}
 	}
-
-	cout << "PRECOS:" << endl;
-	for (int i = 0; i < 5; i++) {
-		cout << precos[i] << endl;
-	}
-
-	cout << "PRODUTOS ENTRE 50 A 100:" << endl;
-	for (int i = 0; i < p50a100; i++) {
-		cout << nome[i] << endl;
-	}
-
-	cout << "Quantidade de produtos com preco inferior a 50 euros: " << p50 << endl;
+	cout << "Media de precos dos produtos com preco superior a 100.00 euros: " << (float) soma / p100;
 }
 
 void ex53() {
 
 	//Faz um programa que receba o total das vendas de cada vendedor e guarde em um vetor. Receba também a percentagem da comissão de cada vendedor e armazene em outro vetor. 
-	// Receba os nomes desses vendedores e armazene em um terceiro vetor. Existem apenas dez vendedores. Calcule e mostre:
+	//Receba os nomes desses vendedores e armazene em um terceiro vetor. Existem apenas dez vendedores. Calcule e mostre:
 	//Um relatório com os nomes dos vendedores e os valores a receber;
 	//O total das vendas de todos os vendedores;
 	//O maior valor a receber e quem o receberá;
 	//O menor valor a receber e quem o receberá;
 
+
+	float vendas[2], comissao[2], totalvendas = 0, maiorvalor = 0, menorvalor, valor = 0;
+	string vendedores[2], vendedormaior, vendedormenor;
+
+	for (int i = 0; i < 2; i++) {
+		cout << "Introduza o nome do vendedor/a para a posicao " << i << ": ";
+		cin >> vendedores[i];
+
+		cout << "Introduza a comissao em porcentagem do vendedor/a: " << vendedores[i] << endl;
+		cin >> comissao[i];
+
+		cout << "Introduza o total de vendas do vendedor/a: " << vendedores[i] << endl;
+		cin >> vendas[i];
+		totalvendas += vendas[i];
+	}
+	menorvalor = (comissao[0] / 100) * vendas[0];
+
+	for (int i = 0; i < 2; i++) {
+		valor = (comissao[i] / 100) * vendas[i];
+		
+		if (valor > maiorvalor) {
+			maiorvalor = valor;
+			vendedormaior = vendedores[i];
+		}
+		else {
+			menorvalor = valor;
+			vendedormenor = vendedores[i];
+		}
+	}
+	cout << "Total de vendas de todos os vendedores: " << totalvendas << endl;
+	cout << "Maior valor a receber: " << maiorvalor << " euros do vendedor " << vendedormaior << endl;
+	cout << "Menor valor a receber: " << menorvalor << " euros do vendedor " << vendedormenor;
 }
 
 void ex54() {
 
 	//Escreve um algoritmo que leia dois vetores de 10 posições e faça a multiplicação dos elementos do mesmo índice, colocando o resultado em um terceiro vetor. Mostre o vetor resultante.
+
+	int vetor1[10], vetor2[10], vetor3[10];
+
+	for (int i = 0; i < 10; i++) {
+		cout << "Introduza um algoritmo para o primeiro vetor na posicao " << i << ": ";
+		cin >> vetor1[i];
+
+		cout << "Introduza um algoritmo para o segundo vetor na posicao " << i << ": ";
+		cin >> vetor2[i];
+
+		vetor3[i] = vetor1[i] * vetor2[i];
+	}
+	for (int i = 0; i < 10; i++) {
+		cout << vetor3[i] << endl;
+	}
 }
+
+void ex56() {
+
+	//Leia um vetor de 16 posições e troque os 8 primeiros valores pelos 8 últimos. Escreve no final o vetor obtido.
+
+	int vetor[16], vetor1[8], vetor2[8];
+
+	for (int i = 0; i < 16; i++) {
+		cout << "Introduza um valor para a posicao " << i << ": ";
+		cin >> vetor[i];
+	}
+	for (int i = 0; i < 8; i++) {
+		vetor1[i] = vetor[i];
+	}
+	for (int i = 8; i < 16; i++) {
+		vetor2[i - 8] = vetor[i];
+	}
+	for (int i = 0; i < 8; i++) {
+		vetor[i] = vetor2[i];
+	}
+	for (int i = 8; i < 16; i++) {
+		vetor[i] = vetor1[i - 8];
+	}
+	for (int i = 0; i < 16; i++) {
+		cout << vetor[i] << endl;
+	}
+}
+
+void ex57() {
+
+	//Escreve um programa que lê 6 valores inteiros e, em seguida, mostre os valores lidos pela ordem inversa.
+
+	int vetor[6];
+
+	for (int i = 0; i < 6; i++) {
+		cout << "Introduza um valor inteiro para a posicao " << i << ": ";
+		cin >> vetor[i];
+	}
+	for (int i = 5; i >= 0; i--) {
+		cout << vetor[i] << endl;
+	}
+}
+
+void ex58() {
+
+	//Faz um programa para ler a nota de 10 alunos e guarde num vetor. Calcule e imprima a média em geral.
+
+	int soma = 0;
+	float notas[10];
+
+	for (int i = 0; i < 10; i++) {
+		cout << "Introduza a nota para a posicao " << i << ": ";
+		cin >> notas[i];
+
+		soma += notas[i];
+	}
+	cout << "Media geral: " << (float) soma / 10;
+}
+
+void ex59() {
+
+	//Leia um vetor de 10 posições e verifique se existem valores iguais e os escreva.
+
+	int vetor[10];
+	bool valoresiguais = false;
+
+	for (int i = 0; i < 10; i++) {
+		cout << "Introduza um valor para a posicao " << i << ": ";
+		cin >> vetor[i];
+	}
+	for (int i = 0; i < 10; i++) {
+		for (int x = i + 1; x < 10; x++) { //duvida: se o x = 1 da problema
+			if (vetor[i] == vetor[x]) {
+				valoresiguais = true;
+				cout << "O valor da posicao " << i << " e igual ao valor da posicao " << x << endl;
+				cout << "Valor: " << vetor[i] << endl;
+			}
+		}
+	}
+	if (!valoresiguais) { //Verifica se a variável booleana encontrouValoresIguais é igual a false. Se for o caso, o código dentro desse bloco if será executado.
+		cout << "Nao ha valores iguais no vetor";
+	}
+}
+
+void ex60() {
+
+	//Faz um programa para ler 5 valores e, em seguida, mostrar a posição onde se encontra o maior e o menor.
+
+	int vetor[5], maior = 0, menor = 0;
+
+	for (int i = 0; i < 5; i++) {
+		cout << "Introduza um valor para a posicao " << i << ": ";
+		cin >> vetor[i];
+
+		if (vetor[i] > vetor[maior]) {
+			maior = i;
+		}
+		else if (vetor[i] < vetor[menor]) {
+			menor = i;
+		}
+	}
+	cout << "Posicao do maior valor: " << maior << endl;
+	cout << "Posicao do menor valor: " << menor << endl;
+}
+
+void ex61() {
+
+	//Faz um programa para ler 5 valores e, em seguida mostrar a posição onde se encontra o maior e o menor valor.
+
+	int vetor[5], maior = 0, menor = 0;
+
+	for (int i = 0; i < 5; i++) {
+		cout << "Introduza um valor para a posicao " << i << ": ";
+		cin >> vetor[i];
+
+		if (vetor[i] > vetor[maior]) {
+			maior = i;
+		}
+		else if (vetor[i] < vetor[menor]) {
+			menor = i;
+		}
+	}
+	cout << "Posicao do maior valor: " << maior << endl;
+	cout << "Posicao do menor valor: " << menor << endl;
+}
+
+void ex62() {
+
+	//Leia um vetor com 20 números inteiros. Escreva os elementos do vetor eliminando elementos repetidos.
+
+	int vetor[20];
+
+	for (int i = 0; i < 20; i++) {
+		cout << "Introduza um valor para a posicao " << i << ": ";
+		cin >> vetor[i];
+	}
+	
+	cout << "Valores do vetor:" << endl;
+	for (int i = 0; i < 20; i++) {
+		for (int x = i + 1; x < 20; x++) { //duvida: se o x = 1 da problema
+			if (vetor[i] == vetor[x]) {
+				vetor[x] = 0;
+			}
+		}
+		cout << vetor[i] << endl;
+	}
+}
+
+void ex63() {
+
+	//Escreva um programa que leia números inteiros no intervalo [0,50] e os guarde em um vetor com 10 posições. Preencha um segundo vetor com os números ímpares do primeiro vetor. 
+	//Imprima os dois vetores.
+}
+
+void ex64() {
+
+	//Escreva um programa que leia um vetor de 10 posições e crie um segundo vetor substituindo os valores negativos por 1.
+}
+
 int main() {
-	ex52();
+	ex62();
 	return 0;
 } // for ex20; while ex21; do...while ex22 ex25; bool ex47;
